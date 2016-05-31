@@ -12,7 +12,7 @@ public class SpringTest {
     @Test
     public void test(){
         //通过spring.xml配置文件创建Spring的应用程序上下文环境
-        ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:spring.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"spring.xml","spring-hibernate.xml"});
         //从Spring的IOC容器中获取bean对象
         UserServiceI userService = (UserServiceI) ac.getBean("userService");
         //执行测试方法
